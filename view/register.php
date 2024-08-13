@@ -23,90 +23,98 @@ if (isset($_SESSION['error_message'])) {
             background-size: cover;
             background-attachment: fixed;
             margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Höhe des Viewports */
         }
 
         .headline {
             font-size: 70px;
             color: white;
             text-align: center;
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
-
 
         .form-container {
             padding: 20px;
             border-radius: 10px;
-            position: absolute;
-            top: 250px;
-            left: 650px;
+            background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
             width: 400px;
-        }
-
-        .form-container input[type="text"] {
-            font-size: 1rem;
         }
 
         .form-container .btn {
             width: 100%;
+            font-size: 1rem;
+            display: flex;
+            border-radius: 10px;
+            justify-content: center;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
         }
 
-        .form-container p {
-            text-align: center;
+        .form-container .mb-3 {
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .form-container span {
+            color: white;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
+<div class="form-container">
     <h1 class="headline">Register</h1>
-
     <form action="../index.php" method="post">
         <input type="hidden" name="action" value="register">
-        <div class="form-container">
-            <?php if (!empty($error_message)): ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $error_message; ?>
-                </div>
-            <?php endif; ?>
-            <div class="mb-3">
-                <div class="input-group-prepend">
-                    <span style="color: white">Vorname</span>
-                </div>
-                <input type="text" class="form-control"  name="fname">
+        <?php if (!empty($error_message)): ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $error_message; ?>
             </div>
-            <div class="mb-3">
-                <div class="input-group-prepend">
-                    <span style="color: white">Nachname</span>
-                </div>
-                <input type="text" class="form-control" name="lname">
-            </div>
-            <div class="mb-3">
-                <div class="input-group-prepend">
-                    <span style="color: white">Adresse</span>
-                </div>
-                <input type="text" class="form-control" name="address">
-            </div>
-            <div class="mb-3">
-                <div class="input-group-prepend">
-                    <span type="email" style="color: white">Email</span>
-                </div>
-                <input type="text" class="form-control" name="email">
-            </div>
-            <div class="mb-3">
-                <div class="input-group-prepend">
-                    <span style="color: white">Passwort</span>
-                </div>
-                <input type="password" class="form-control" name="password">
-            </div>
-            <div class="mb-3">
-                <div class="input-group-prepend">
-                    <span style="color: white">Passwort wiederholen</span>
-                </div>
-                <input type="password" class="form-control" name="password_ch">
-            </div>
-            <div class="mb-3">
-                <button type="submit" class="btn btn-success">registrieren</button>
-            </div>
+        <?php endif; ?>
+        <div class="mb-3">
+            <span>firstname</span>
+            <input type="text" name="fname">
+        </div>
+        <div class="mb-3">
+            <span>lastname</span>
+            <input type="text" name="lname">
+        </div>
+        <div class="mb-3">
+            <span>address</span>
+            <input type="text" name="address">
+        </div>
+        <div class="mb-3">
+            <span>email</span>
+            <input type="text" name="email">
+        </div>
+        <div class="mb-3">
+            <span>password</span>
+            <input type="password" name="password">
+        </div>
+        <div class="mb-3">
+            <span>password confirm</span>
+            <input type="password" name="password_ch">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success">register</button>
         </div>
     </form>
+</div>
 </body>
 </html>
 
