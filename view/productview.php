@@ -144,6 +144,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             </div>
     </form>
 <?php endif; ?>
+
 <script>
     function toggleDescription() {
         var description = document.getElementById('description');

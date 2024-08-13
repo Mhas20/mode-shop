@@ -6,7 +6,6 @@ include "links_icon.php";
 if (!isset($_GET['ordernum'])) {
     die('OrderNum nicht angegeben.');
 }
-
 $ordernum = (int)$_GET['ordernum'];
 
 $bestellungen = Bestellung::orderDetails($ordernum);

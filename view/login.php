@@ -40,18 +40,28 @@ if (isset($_SESSION['error_message'])) {
             width: 400px;
         }
         .form-container .input-group {
-            margin-bottom: 20px;
-        }
-        .form-container input[type="text"] {
             width: 100%;
             font-size: 1rem;
+            display: flex;
+            border-radius: 10px;
         }
-        .form-container input[type="password"] {
+        .form-container input[type="text"], .form-container input[type="password"] {
             width: 100%;
             font-size: 1rem;
+            display: flex;
+            border-radius: 5px;
         }
         .form-container .btn {
             width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: green;
+            color: white;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .form-container p {
             text-align: center;
@@ -69,16 +79,16 @@ if (isset($_SESSION['error_message'])) {
                 </div>
             <?php endif; ?>
         <div class="mb-3">
-            <div class="input-group-prepend">
+            <div class="input-group">
                 <span style="color: white">Email</span>
+                <input type="text"  name="email">
             </div>
-            <input type="text"  name="email">
         </div>
         <div class="mb-3">
-            <div class="input-group-prepend">
+            <div class="input-group">
                 <span style="color: white">Passwort</span>
+                <input type="password" name="password">
             </div>
-            <input type="password" name="password">
         </div>
         <div class="input-group">
             <button type="submit" class="btn btn-success" id="logged_in">Login</button>

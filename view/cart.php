@@ -171,6 +171,7 @@ include_once "../model/Products.php";
     }
 
     document.addEventListener('DOMContentLoaded', calculateGrandTotal);
+
 </script>
 
 </body>

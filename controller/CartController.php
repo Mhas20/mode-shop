@@ -69,4 +69,3 @@ class CartController {
         return $products;
     }
 }
-

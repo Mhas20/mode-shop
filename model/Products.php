@@ -138,5 +138,4 @@ class Products
             $_SESSION['cart'][$productId] = $quantity;
         }
     }
-
 }

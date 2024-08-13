@@ -50,4 +50,3 @@ switch ($action) {
         include './view/view.php';
         break;
 }
-
