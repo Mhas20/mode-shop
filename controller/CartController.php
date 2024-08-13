@@ -24,7 +24,7 @@ class CartController {
 
     private function buyProducts() {
         if (!isset($_SESSION['u_id'])) {
-            header("Location: /online-shops/view/login.php");
+            header("Location: /modeshops/view/login.php");
             exit();
         } else {
             if (isset($_POST['quantities'])) {
@@ -40,7 +40,7 @@ class CartController {
             }
 
             unset($_SESSION['cart']);
-            header("Location: /online-shops/view/order.php");
+            header("Location: /modeshops/view/order.php");
             exit();
         }
     }
@@ -49,7 +49,7 @@ class CartController {
         if (isset($_SESSION['cart'][$productId])) {
             unset($_SESSION['cart'][$productId]);
         }
-        header("Location: /online-shops/view/cart.php");
+        header("Location: /modeshops/view/cart.php");
         exit();
     }
 

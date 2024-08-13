@@ -17,11 +17,9 @@ class ProductController {
             $productId = (int)$_POST['p_id'];
             $quantity = (int)$_POST['amount'];
             Products::addProduct($productId, $quantity); // Produkt zum Warenkorb hinzufügen
-            header("Location: /online-shops/view/cart.php");
+            header("Location: /modeshops/view/cart.php");
             exit();
 
-//            include "/xampp/htdocs/online-shops/view/cart.php"; // Weiterleitung zur Warenkorb-Seite
-//            exit();
         }
     }
 

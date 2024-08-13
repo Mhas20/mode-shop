@@ -63,7 +63,7 @@ class Products
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "online_shops";
+        $dbname = "modeshops";
         return new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     }
 

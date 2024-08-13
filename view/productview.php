@@ -1,14 +1,6 @@
 <?php
 include_once __DIR__ . '/links_icon.php';
 include "../model/Products.php";
-
-//if (isset($_POST['p_id']) && isset($_POST['amount'])) {
-//    $productId = (int)$_POST['p_id'];
-//    $quantity = (int)$_POST['amount'];
-//    Products::addProduct($productId, $quantity); // Add product to cart
-//    include "cart.php"; // Redirect to cart page
-//    exit();
-//}
 ?>
 <!doctype html>
 <html lang="en">

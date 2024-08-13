@@ -1,6 +1,5 @@
 <?php
 include __DIR__ . '/links_icon.php';
-//include_once './config/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,44 +1,6 @@
 <?php
 include_once __DIR__ . '/links_icon.php';
 include_once "../model/Products.php";
-//
-//if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buy'])) {
-//
-//    // check ob ein User vorhanden ist
-//    if (!isset($_SESSION['u_id'])) {
-//        // User nicht eingeloggt, login Seite
-//        header("Location: ../view/login.php");
-//        exit();
-//    } else {
-//        // Update quantities in the cart
-//        if (isset($_POST['quantities'])) {
-//            foreach ($_POST['quantities'] as $productId => $quantity) {
-//                $_SESSION['cart'][$productId] = $quantity;
-//            }
-//        }
-//
-//        // neue Bestellung
-//        $u_id = $_SESSION['u_id'];
-//        $orderNumber = Bestellung::randOrderNum();
-//        foreach ($_SESSION['cart'] as $productId => $quantity) {
-//            Bestellung::createBestellung($u_id, $productId, $quantity, $orderNumber);
-//        }
-//
-//        // Cart leeren nach Bestellung
-//        unset($_SESSION['cart']);
-//
-//        header("Location: ../view/order.php");
-//        exit();
-//    }
-//}
-//
-//// Entfernen von Artikeln aus dem Warenkorb
-//if (isset($_POST['remove']) && isset($_POST['p_id'])) {
-//    $productId = $_POST['p_id'];
-//    if (isset($_SESSION['cart'][$productId])) {
-//        unset($_SESSION['cart'][$productId]);
-//    }
-//}
 ?>
 <!doctype html>
 <html lang="de">

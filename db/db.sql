@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS online_shops;
+DROP DATABASE IF EXISTS modeshops;
 
-CREATE DATABASE online_shops;
+CREATE DATABASE modeshops;
 
-use online_shops;
+use modeshops;
 
 CREATE TABLE User (
     u_id int auto_increment PRIMARY KEY,

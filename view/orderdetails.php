@@ -1,4 +1,3 @@
-
 <?php
 require_once '../model/Bestellung.php';
 require_once '../model/Products.php';

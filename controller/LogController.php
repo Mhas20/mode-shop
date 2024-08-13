@@ -1,17 +1,4 @@
 <?php
-// Startet die Session
-//session_start();
-//
-//// Entfernt alle Session-Variablen
-//session_unset();
-//
-//// Zerstört die Session
-//session_destroy();
-//
-//// Leitet den USer zur Login-Seite weiter
-//header("Location: ../view/login.php");
-//exit();
-
  include "./model/User.php";
 class LogController
 {
@@ -23,15 +10,6 @@ class LogController
 
         header("location: index.php");
         exit();
-
-//        // Optional: Cookies, die mit der Session verknüpft sind, löschen
-//        if (ini_get('session.use_cookies')) {
-//            $params = session_get_cookie_params();
-//            setcookie(session_name(), '', time() - 42000,
-//                $params['path'], $params['domain'],
-//                $params['secure'], $params['httponly']
-//            );
-//        }
     }
 
     public function login()
@@ -50,13 +28,13 @@ class LogController
             } else {
                 // Login fehlgeschlagen, Fehlermeldung anzeigen
                 $_SESSION['error_message'] = "E-Mail oder Passwort ist falsch";
-                header("location:  /online-shops/view/login.php");
+                header("location:  /modeshops/view/login.php");
                 exit();
             }
         } else {
             // Nicht alle Felder wurden ausgefüllt
             $_SESSION['error_message'] = "Bitte füllen Sie alle Felder aus";
-            header("location:  /online-shops/view/login.php");
+            header("location:  /modeshops/view/login.php");
             exit();
         }
 
@@ -73,26 +51,26 @@ class LogController
                         // Benutzer erstellen
                         if (User::createUser($_POST['fname'], $_POST['lname'], $_POST['password'], $_POST['email'], $_POST['address'])) {
                             echo "Registrierung erfolgreich";
-                            header("location:  /online-shops/view/login.php");
+                            header("location:  /modeshops/view/login.php");
                             exit();
                         } else {
                             $_SESSION['error_message'] = "Fehler bei der Registrierung. Bitte versuchen Sie es erneut.";
-                            header("location:  /online-shops/view/register.php");
+                            header("location:  /modeshops/view/register.php");
                             exit();
                         }
                     } catch (Exception $e) {
                         $_SESSION['error_message'] = $e->getMessage();
-                        header("location:  /online-shops/view/register.php");
+                        header("location:  /modeshops/view/register.php");
                         exit();
                     }
                 } else {
                     $_SESSION['error_message'] = "Passwörter stimmen nicht überein.";
-                    header("location:  /online-shops/view/register.php");
+                    header("location:  /modeshops/view/register.php");
                     exit();
                 }
             } else {
                 $_SESSION['error_message'] = "Alle Felder müssen ausgefüllt werden.";
-                header("location:  /online-shops/view/register.php");
+                header("location:  /modeshops/view/register.php");
                 exit();
             }
         }
