@@ -23,8 +23,4 @@ class ProductController {
         }
     }
 
-    public function getProductById($productId) {
-        return Products::findById($productId); // Stelle sicher, dass findById korrekt funktioniert
-    }
-
 }
